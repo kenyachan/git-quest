@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git Quest: A Refresher Tutorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;600&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="hud">
+  <div class="hud-inner">
+    <div class="logo pixel">GIT QUEST</div>
+    <div class="xpwrap">
+      <div class="xplabel pixel"><span id="rankLabel" class="rank">NOVICE</span><span id="xpText">0 / 0 XP</span></div>
+      <div class="xpbar"><div class="xpfill" id="xpFill"></div></div>
+    </div>
+    <button id="resetBtn" title="Clear all progress">RESET</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="title-screen">
+    <h1 class="pixel">GIT QUEST</h1>
+    <div class="sub pixel">~ A REFRESHER IN 9 LEVELS ~</div>
+    <div class="scroll npc">
+      <div class="face" aria-hidden="true">🧙</div>
+      <div>
+        <div class="name pixel">OLD COMMIT, THE SAGE</div>
+        <p>Welcome back, traveller. It's been a while since you last held a terminal. Your muscle memory has rusted, but it hasn't gone.</p>
+        <p><strong>How to play:</strong></p>
+        <ul>
+          <li>Open a terminal (macOS/Linux Terminal, or <strong>Git Bash</strong> on Windows) and run each objective yourself. Type the commands out rather than pasting where you can, since typing is how you'll remember them.</li>
+          <li>Tick each objective when it's done. Clearing a level unlocks the next one.</li>
+          <li>Stuck? Open <em>"What you should see"</em> under each step.</li>
+          <li>Everything happens in a throwaway folder called <code>git-quest</code>. Nothing touches your real projects, and you don't need a GitHub account (Level 7 fakes a server on your own machine).</li>
+        </ul>
+        <p>Your progress is saved in this browser.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="map" id="map" aria-label="Level map"></nav>
+  <div id="levels"></div>
+
+  <div class="credits" id="credits">
+    <h2 class="pixel">★ QUEST COMPLETE ★</h2>
+    <p>You've earned the title <strong style="color:var(--gold)">GIT WIZARD</strong>. You can now commit, branch, merge, resolve conflicts, rewrite history, rescue lost work and collaborate.</p>
+    <p><strong>New Game+ ideas:</strong></p>
+    <ul>
+      <li>Replay the whole quest tomorrow without opening the hints.</li>
+      <li>Push <code>git-quest</code> to a real GitHub repo and open a pull request against yourself.</li>
+      <li>Try <code>git bisect</code> to hunt down which commit broke something.</li>
+      <li>Learn <code>git cherry-pick</code> and <code>git worktree</code>.</li>
+    </ul>
+  </div>
+
+  <footer>Tip: run <code>git status</code> whenever you're lost. It's the minimap of Git.</footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><div class="t1 pixel" id="toastT1"></div><div class="t2" id="toastT2"></div></div>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalText">
+    <p id="modalText" class="pixel" style="font-size:10px;line-height:1.8">ERASE ALL SAVE DATA?</p>
+    <div class="row"><button id="cancelReset">CANCEL</button><button class="danger" id="confirmReset">ERASE</button></div>
+  </div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
